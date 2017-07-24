@@ -17,7 +17,7 @@ sub mode { shift->{mode}}
 sub add_to_log {
   my $self = shift;
   my @args = @_;
-  open LOG, ">>/logs/garden.log" or die "couldn't open logfile";
+  open LOG, ">>/var/log/garden.log" or die "couldn't open logfile";
   print LOG @args;
   print LOG "\n";
   close LOG;
@@ -68,7 +68,7 @@ sub database
 sub caml
 {
   my $caml = Text::Caml->new;
-  $caml->set_templates_path("templates");
+  $caml->set_templates_path("/var/lib/assessment-garden/templates");
   return $caml;
 }
 
