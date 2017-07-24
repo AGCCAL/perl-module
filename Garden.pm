@@ -52,12 +52,12 @@ sub database
   my $self = shift;
   unless (defined($self->{dbh}))
   {
-    my $database = "assessmentgarden_org_";
+    my $database = "garden";
     my $driver = "mysql";
     my $dsn = "DBI:$driver:dbname=$database";
     
-    my $userid = "assessmentgarden";
-    my $password = "bDsi1$wNxxya5Qg5";
+    my $userid = "root";
+    my $password = "4/Leadership";
     my $dbh = DBI->connect($dsn, $userid, $password, { RaiseError => 1 }) or die $DBI::errstr;
     
     $self->{dbh} = $dbh;
